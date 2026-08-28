@@ -21,7 +21,7 @@
       applications: "Packaging, sports goods, footwear, marine, insulation",
       short: "Lightweight closed-cell foam with strong cushioning and chemical resistance.",
       description:
-        "EVA white rubber is a vers atile closed-cell material used wherever impact absorption, water resistance and clean fabrication are required. RubberTech supplies standard sheets and custom densities for industrial and commercial buyers.",
+        "EVA white rubber is a versatile closed-cell material used wherever impact absorption, water resistance and clean fabrication are required. RubberTech supplies standard sheets and custom densities for industrial and commercial buyers.",
     },
     {
       id: "epdm-foam",
@@ -335,6 +335,9 @@
   }
   if (overlay) overlay.addEventListener("click", closeNav);
   document.querySelectorAll(".nav a").forEach((link) => link.addEventListener("click", closeNav));
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 1100) closeNav();
+  });
 
   const onScroll = () => {
     if (header) header.classList.toggle("is-sticky", window.scrollY > 12);
@@ -367,7 +370,34 @@
     });
   });
 
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const countUp = (el) => {
+    if (el.dataset.counted) return;
+    el.dataset.counted = "1";
+    const target = Number(el.dataset.count);
+    if (!Number.isFinite(target)) return;
+    const suffix = el.textContent.replace(/[\d.,\s]/g, "") || "+";
+    if (reduceMotion) {
+      el.textContent = target + suffix;
+      return;
+    }
+    const start = performance.now();
+    const duration = 1100;
+    const tick = (now) => {
+      const t = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - t, 3);
+      el.textContent = Math.round(target * eased) + suffix;
+      if (t < 1) requestAnimationFrame(tick);
+    };
+    el.textContent = "0" + suffix;
+    requestAnimationFrame(tick);
+  };
+
   if ("IntersectionObserver" in window) {
+    document.querySelectorAll(".product-grid .reveal, .feature-grid .reveal, .industry-grid .reveal, .products-catalog .product-card").forEach((el, i) => {
+      el.style.setProperty("--d", `${(i % 6) * 0.08}s`);
+    });
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -380,8 +410,21 @@
       { threshold: 0.12 }
     );
     document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+    const statsIo = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.querySelectorAll("b[data-count]").forEach(countUp);
+          statsIo.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.35 }
+    );
+    document.querySelectorAll(".stats").forEach((el) => statsIo.observe(el));
   } else {
     document.querySelectorAll(".reveal").forEach((el) => el.classList.add("revealed"));
+    document.querySelectorAll(".stat b[data-count]").forEach(countUp);
   }
 
   /* Featured slider */
@@ -396,6 +439,7 @@
       const w = window.innerWidth;
       if (w <= 560) return 1;
       if (w <= 1024) return 2;
+      if (w <= 1200) return 3;
       return 4;
     };
 
@@ -468,12 +512,14 @@
       fields.applications.textContent = product.applications;
       quote.href = `contact.html?product=${encodeURIComponent(product.name)}#quote`;
       modal.classList.add("is-open");
+      document.body.classList.add("modal-open");
       document.body.style.overflow = "hidden";
       modal.querySelector(".modal-close").focus();
     };
 
     const closeModal = () => {
       modal.classList.remove("is-open");
+      document.body.classList.remove("modal-open");
       document.body.style.overflow = "";
     };
 
