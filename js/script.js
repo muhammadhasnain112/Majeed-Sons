@@ -1,11 +1,11 @@
 /* RubberTech Industries — site behaviour (vanilla JS) */
 (() => {
   const SITE = {
-    name: "RubberTech Industries",
-    email: "info@rubbertech.com",
-    phone: "+92 300 1234567",
-    whatsapp: "923001234567",
-    location: "Karachi, Pakistan",
+    name: "EVA Rubber Foam",
+    email: "pakinterrubber@gmail.com",
+    phone: "+92 321 2991915",
+    whatsapp: "923212991915",
+    location: "MA Jinnah Road Eid Ghah Masjid Phool Gali Shop No 35 Saddar Karachi",
   };
 
   const PRODUCTS = [
