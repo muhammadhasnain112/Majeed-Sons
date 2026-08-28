@@ -11,172 +11,308 @@
   const PRODUCTS = [
     {
       id: "eva-foam",
-      name: "EVA Foam",
-      image: "images/products/eva-foam.jpg",
+      name: "EVA White Rubber",
+      image: "images/products/eve-rubber.jfif",
       categories: ["foam", "sheets"],
       material: "Ethylene-Vinyl Acetate (EVA)",
-      thickness: "2 mm – 100 mm",
+      thickness: "1 mm – 28 mm",
       size: "Sheets, rolls and custom cut parts",
-      colors: "Black, white, grey and custom colours",
+      colors: "White",
       applications: "Packaging, sports goods, footwear, marine, insulation",
       short: "Lightweight closed-cell foam with strong cushioning and chemical resistance.",
       description:
-        "EVA foam is a versatile closed-cell material used wherever impact absorption, water resistance and clean fabrication are required. RubberTech supplies standard sheets and custom densities for industrial and commercial buyers.",
+        "EVA white rubber is a vers atile closed-cell material used wherever impact absorption, water resistance and clean fabrication are required. RubberTech supplies standard sheets and custom densities for industrial and commercial buyers.",
     },
     {
       id: "epdm-foam",
-      name: "EPDM Foam",
-      image: "images/products/epdm-foam.jpg",
+      name: "Hard Sole Sheet",
+      image: "images/products/hard sole sheet.jfif",
       categories: ["foam", "industrial"],
-      material: "EPDM closed-cell foam",
-      thickness: "3 mm – 50 mm",
-      size: "Sheets, strips and die-cut gaskets",
-      colors: "Black, grey",
-      applications: "HVAC, automotive weatherseals, outdoor gaskets, insulation",
-      short: "Weather-resistant foam for sealing, insulation and outdoor applications.",
-      description:
-        "EPDM foam performs in heat, ozone and moisture. It is specified for HVAC insulation, automotive sealing and outdoor industrial gaskets where long-term durability matters.",
-    },
-    {
-      id: "pe-foam",
-      name: "PE Foam",
-      image: "images/products/pe-foam.jpg",
-      categories: ["foam"],
-      material: "Polyethylene foam",
-      thickness: "1 mm – 100 mm",
-      size: "Planks, rolls and fabricated inserts",
-      colors: "White, pink, blue, custom",
-      applications: "Protective packaging, construction joints, sports padding",
-      short: "Closed-cell polyethylene foam for packaging and construction.",
-      description:
-        "PE foam offers a clean, resilient barrier against shock and moisture. We convert planks and rolls into packaging inserts, expansion joints and protective liners to your drawing.",
-    },
-    {
-      id: "silicone-rubber",
-      name: "Silicone Rubber",
-      image: "images/products/silicone-rubber.jpg",
-      categories: ["rubber", "custom"],
-      material: "VMQ silicone rubber",
-      thickness: "0.5 mm – 20 mm",
-      size: "Sheets, extruded profiles and molded parts",
-      colors: "Red, translucent, white, custom",
-      applications: "Food equipment, electronics, high-temperature seals",
-      short: "High-temperature silicone for sealing, gaskets and hygienic applications.",
-      description:
-        "Silicone rubber remains flexible from low to high temperatures and is widely used in electrical, medical-adjacent and food-processing environments. Available as sheet, extrusion or custom molding.",
-    },
-    {
-      id: "rubber-sheets",
-      name: "Rubber Sheets",
-      image: "images/products/rubber-sheet.jpg",
-      categories: ["rubber", "sheets"],
-      material: "NR, SBR, NBR, EPDM and neoprene",
-      thickness: "1 mm – 50 mm",
-      size: "Standard rolls and cut-to-size sheets",
-      colors: "Black, red, custom",
-      applications: "Flooring, lining, gaskets, general industrial fabrication",
-      short: "Industrial rubber sheeting in multiple compounds and thicknesses.",
-      description:
-        "Our rubber sheet range covers commercial, oil-resistant and weather-grade compounds. Sheets can be supplied in rolls or cut to size for fabrication, lining and gasket production.",
-    },
-    {
-      id: "rubber-mats",
-      name: "Rubber Mats",
-      image: "images/products/rubber-mat.jpg",
-      categories: ["rubber", "sheets", "industrial"],
-      material: "Recycled and virgin rubber",
-      thickness: "3 mm – 25 mm",
-      size: "Tiles, rolls and custom mats",
-      colors: "Black, speckled, custom",
-      applications: "Workshops, gyms, walkways, anti-fatigue stations",
-      short: "Durable rubber matting for safety, traction and floor protection.",
-      description:
-        "Rubber mats protect floors and operators in industrial, commercial and sports environments. Options include coin, checker and anti-fatigue surfaces with custom sizing.",
-    },
-    {
-      id: "shock-pads",
-      name: "Shock Pads",
-      image: "images/products/shock-pad.jpg",
-      categories: ["industrial", "foam"],
-      material: "High-density rubber / foam composite",
-      thickness: "10 mm – 50 mm",
-      size: "Tiles and custom pads",
-      colors: "Black, grey",
-      applications: "Playgrounds, sports turf, machinery bases",
-      short: "Impact-absorbing pads for sports surfaces and equipment isolation.",
-      description:
-        "Shock pads reduce impact energy under synthetic turf, playgrounds and heavy equipment. We supply standard tiles and engineered pads to specified compression sets.",
-    },
-    {
-      id: "anti-vibration-pads",
-      name: "Anti-Vibration Pads",
-      image: "images/products/anti-vibration-pad.jpg",
-      categories: ["industrial", "rubber"],
-      material: "Natural rubber with optional metal inserts",
-      thickness: "10 mm – 40 mm",
-      size: "Squares, mounts and custom footprints",
+      material: "Rubber Sole Sheets or dense synthetic polymer compounds",
+      thickness: "10mm",
+      size: "All Sizes",
       colors: "Black",
-      applications: "HVAC units, generators, presses, pumps",
-      short: "Isolation pads and mounts that reduce noise and machine vibration.",
+      applications: "HVAC, automotive weatherseals, outdoor gaskets, insulation",
+      short: "Durable materials designed for shoe manufacturing and repair.",
       description:
-        "Anti-vibration pads isolate rotating and impact machinery from the building structure. Available as simple pads or bonded mounts with metal plates for bolted installation.",
+        "high-density, durable materials engineered specifically for manufacturing and repairing the bottom layers of footwear.",
+    }, {
+      "id": "pe-foam",
+      "name": "Holland Rubber Sheet",
+      "image": "images/products/holland-rubber-sheet.jfif",
+      "categories": ["rubber", "soling"],
+      "material": "Rubber / EVA Blend",
+      "thickness": "3 mm – 8 mm",
+      "size": "Sheets and custom cut sizes",
+      "colors": "Black, White, Brown, Custom",
+      "applications": "Shoe soling, anti-slip matting, footwear repair, crafts",
+      "short": "Textured rubber soling sheet with cross-hatch/jali pattern for enhanced grip.",
+      "description": "Holland rubber sheets feature a durable, anti-slip textured pattern ideal for shoe soles and protective lining. Designed to provide excellent traction, flexibility, and wear resistance for footwear manufacturing and repair."
     },
     {
-      id: "neoprene-sheets",
-      name: "Neoprene Sheets",
-      image: "images/products/neoprene-sheet.jpg",
-      categories: ["rubber", "sheets"],
-      material: "CR neoprene",
-      thickness: "1 mm – 25 mm",
-      size: "Sheets and die-cut parts",
-      colors: "Black, grey",
-      applications: "Gaskets, marine, HVAC, oil-resistant sealing",
-      short: "Oil and weather resistant neoprene for gaskets and lining.",
-      description:
-        "Neoprene balances oil, weather and flame resistance, making it a reliable choice for industrial gaskets, marine fenders and HVAC sealing.",
+      "id": "silicone-rubber",
+      "name": "Box Packing Rubber Sheet",
+      "image": "images/products/box-packing-rubber.jfif",
+      "categories": ["packaging", "rubber", "foam"],
+      "material": "EVA / Neoprene / High-Density Foam",
+      "thickness": "1 mm – 28 mm",
+      "size": "Sheets, rolls, and custom die-cut inserts",
+      "colors": "Black, Dark Grey, Custom",
+      "applications": "Box packing inserts, protective padding, shock absorption, tool organization, shipping protection",
+      "short": "High-density packaging foam/rubber sheets for box lining and shock-resistant protection.",
+      "description": "Box packing rubber sheets provide superior cushioning and impact resistance for sensitive products and equipment. Material can be easily cut, routed, or die-cut to create custom inner box linings and protective packaging inserts."
     },
     {
-      id: "foam-profiles",
-      name: "Foam Profiles",
-      image: "images/products/foam-profiles.jpg",
-      categories: ["foam", "custom"],
-      material: "EPDM, silicone or PE foam",
-      thickness: "As per profile drawing",
-      size: "Extruded lengths and cut gaskets",
-      colors: "Black, grey, custom",
-      applications: "Doors, windows, enclosures, weatherstripping",
-      short: "Extruded foam seals and profiles manufactured to drawing.",
-      description:
-        "We extrude and convert foam profiles for weatherstripping, enclosure sealing and edge protection. Send a section drawing and we will recommend compound and density.",
+      "id": "rubber-sheets",
+      "name": "Die Cutting Rubber",
+      "image": "images/products/die-cutting-rubber.jfif",
+      "categories": ["rubber", "die-cutting", "industrial"],
+      "material": "High-Resilience Rubber / Ejection Foam",
+      "thickness": "1 mm – 28 mm",
+      "size": "Sheets and custom strips",
+      "colors": "Red, Yellow, Green, White, Black, Grey, Blue",
+      "applications": "Die-making, ejection rubber for steel rule dies, printing & packaging die-cutting",
+      "short": "High-resilience rubber sheets designed for ejection in die-cutting tools and packaging machinery.",
+      "description": "Die cutting ejection rubber sheets provide high bounce resilience and tear resistance. Placed along steel rule dies, they efficiently eject cut cardboard, paper, or plastic materials after each pressing cycle."
     },
     {
-      id: "rubber-gaskets",
-      name: "Rubber Gaskets",
-      image: "images/products/rubber-gaskets.jpg",
-      categories: ["rubber", "industrial", "custom"],
-      material: "NBR, EPDM, silicone, neoprene",
-      thickness: "0.5 mm – 12 mm",
-      size: "Die-cut, water-jet and molded gaskets",
-      colors: "Black, red, custom",
-      applications: "Flanges, pumps, electrical enclosures, process equipment",
-      short: "Precision-cut and molded gaskets for industrial sealing.",
-      description:
-        "Gaskets are cut or molded from the compound that matches your media, temperature and pressure. Prototypes and production volumes are both supported.",
+      "id": "rubber-mats",
+      "name": "School Working Sheets",
+      "image": "images/products/School-working-sheet.jfif",
+      "categories": ["crafts", "stationery", "foam"],
+      "material": "EVA Foam / Polyethylene",
+      "thickness": "2mm",
+      "size": "A4, A3, and custom sheet sizes",
+      "colors": "Assorted bright colors (Red, Blue, Yellow, Green, Pink, Orange, White, Black)",
+      "applications": "School projects, arts & crafts, DIY model making, classroom teaching aids, soft cut-out shapes",
+      "short": "Multi-colored soft foam sheets ideal for kids' school projects, crafting, and creative activities.",
+      "description": "School working foam sheets are lightweight, easy to cut, non-toxic, and flexible. Designed specifically for students and educational activities, these vibrant sheets are perfect for art projects, craft modeling, and interactive classroom displays."
     },
     {
-      id: "custom-molded",
-      name: "Custom Molded Rubber Products",
-      image: "images/products/custom-molded.jpg",
-      categories: ["custom", "rubber"],
-      material: "Specified by application",
-      thickness: "To drawing",
-      size: "Prototype to production volumes",
-      colors: "As specified",
-      applications: "OEM parts, bumpers, bushings, seals, special components",
-      short: "Application-engineered molded rubber parts made to your specification.",
-      description:
-        "When a catalogue part is not enough, RubberTech develops custom molded components. Share drawings, samples or performance targets and our team will propose compound, tooling and lead time.",
+      "id": "shock-pads",
+      "name": "Surgical Rubber Sheet",
+      "image": "images/products/surgical-rubber-sheet.jfif",
+      "categories": ["medical", "rubber"],
+      "material": "Natural Latex / Medical Grade Silicone",
+      "thickness": "3 mm – 12 mm",
+      "size": "Rolls and pre-cut sheets",
+      "colors": "Orange, Yellow, Purple, Pink, Red, Green, Light green, Blue, Brown, White, Black",
+      "applications": "Hospital bed protection, surgical drapes, medical tubing, laboratory usage, protective barrier sheets",
+      "short": "Medical-grade rubber sheets designed for hygiene protection, flexibility, and liquid resistance in healthcare environments.",
+      "description": "Surgical rubber sheets offer high elasticity, waterproofing, and chemical resistance suitable for medical and laboratory applications. They provide a reliable, easy-to-sterilize protective layer for hospital beds, clinical procedures, and healthcare equipment."
     },
+    {
+      "id": "anti-vibration-pads",
+      "name": "Interlocking Rubber Gym Flooring",
+      "image": "images/products/rubber-gym-flooring.jfif",
+      "categories": ["flooring", "rubber", "sports"],
+      "material": "Recycled High-Density Rubber / SBR with EPDM Flecks",
+      "thickness": "12 mm – 15 mm",
+      "size": "500 mm x 500 mm, 1 m x 1 m interlocking tiles",
+      "colors": "Black with Blue, Grey, Red, or Yellow EPDM flecks",
+      "applications": "Commercial gyms, home workout areas, weightlifting zones, cross-training facilities, play areas",
+      "short": "Heavy-duty interlocking rubber tiles designed for shock absorption and heavy equipment protection.",
+      "description": "Interlocking rubber gym tiles provide high impact protection, noise reduction, and excellent slip resistance for heavy weight areas. Features a puzzle-edge design for easy tool-free assembly and seamless coverage."
+    },
+    {
+      "id": "neoprene-sheets",
+      "name": "Leatherboard Rubber Sheet (White)",
+      "image": "images/products/leaderboard-rubber.jfif",
+      "categories": ["footwear", "leatherboard", "insole"],
+      "material": "Recycled Leather Fibers & Natural Rubber / Latex Binder",
+      "thickness": "0.5 mm",
+      "size": "Rolls and flat sheet cuts",
+      "colors": "White, Off-White, Natural",
+      "applications": "Footwear insoles, heel counters, shoe stiffeners, leather goods structural lining, belts, bookbinding",
+      "short": "White bonded leather sheet combined with rubber binder for enhanced flexibility, shape retention, and footwear structure.",
+      "description": "White leatherboard rubber sheets are crafted by bonding recycled leather fibers with natural rubber or latex. Offering excellent flex endurance, durability, and smooth finish, they are ideal for inner shoe components like counters, insoles, and structural reinforcement in leather products."
+    },
+    {
+      "id": "foam-profiles",
+      "name": "Textured Rubber Floor Mat",
+      "image": "images/products/Rubber-floor-mate.jfif",
+      "categories": ["matting", "flooring", "rubber"],
+      "material": "Natural Rubber / Synthetic Rubber Compound",
+      "thickness": "3mm",
+      "size": "Standard mat sizes, rolls, and custom lengths",
+      "colors": "Red, Black, Blue, White Green,",
+      "applications": "Anti-slip floor covering, doorway mats, kitchen and workshop flooring, wet area protection, gym floor liners",
+      "short": "Multi-patterned non-slip rubber floor mats for enhanced grip and moisture drainage.",
+      "description": "Textured rubber floor mats feature anti-skid embossed patterns designed to provide maximum traction and safety in high-traffic or wet areas. Durable and waterproof, they are ideal for residential, commercial, and industrial floor protection."
+    },
+    {
+      "id": "rubber-gaskets",
+      "name": "Anti-Slip EVA Rubber Foam",
+      "image": "images/products/eva-rubber-role.avif",
+      "categories": ["foam", "eva", "matting"],
+      "material": "Ethylene-Vinyl Acetate (EVA) / Rubber Foam",
+      "thickness": "1 mm – 5 mm",
+      "size": "Continuous rolls and pre-cut sheets",
+      "colors": "Black, Red, Purple, Custom",
+      "applications": "Yoga & exercise mats, drawer liners, anti-skid pad backing, footwear insoles, marine decking traction, craft cushioning",
+      "short": "Flexible, high-grip EVA rubber foam rolls designed for shock absorption and anti-slip protection.",
+      "description": "Anti-Slip EVA Rubber Foam rolls combine lightweight flexibility with superior surface grip. Water-resistant and shock-absorbing, these rolls are easily cut to size for athletic mats, protective surface liners, non-skid pads, and custom padding applications."
+    },
+    {
+      "id": "custom-molded",
+      "name": "Choti Dholki Rubber Sheet",
+      "image": "images/products/choti-dholki.jfif",
+      "categories": ["rubber", "soling", "matting"],
+      "material": "Rubber / EVA Blend",
+      "thickness": "3mm",
+      "size": "Sheets and custom cut sizes",
+      "colors": "Yellow",
+      "applications": "Shoe soling, footwear repair, anti-slip mats, slippers & sandals, craft work",
+      "short": "Textured rubber soling sheet featuring a small drum/dholki weave pattern for enhanced grip.",
+      "description": "Choti Dholki rubber sheets feature a distinctive small-scale embossed pattern designed for durability and non-slip traction. High flexibility and wear resistance make them ideal for shoe soles, slippers, and surface lining."
+    },
+    {
+      "id": "vip-rubber-foam",
+      "name": "VIP Rubber Foam",
+      "image": "images/products/vip-rubber.jfif",
+      "categories": ["foam", "rubber", "cushioning"],
+      "material": "High-Density EVA / Rubber Foam Blend",
+      "thickness": "3 mm – 25 mm",
+      "size": "Sheets, rolls, and pre-cut mats",
+      "colors": "Black, Blue, Red, Grey, Custom",
+      "applications": "Premium shoe insoles, orthopedic footwear, shock-absorbing padding, seating cushion liners, protective gear",
+      "short": "Premium high-density rubber foam sheet offering superior comfort, bounce, and durability.",
+      "description": "VIP Rubber Foam is a top-tier elastomeric foam material engineered for high resilience, long-lasting comfort, and exceptional compression resistance. Commonly used in high-grade footwear, specialized sports equipment, and ergonomic cushioning."
+    },
+    {
+      "id": "banwar-rubber-sheet",
+      "name": "Banwar Rubber Sheet",
+      "image": "images/products/banwar-rubber.jfif",
+      "categories": ["footwear", "soling", "rubber"],
+      "material": "Rubber / EVA Blend",
+      "thickness": "2 mm – 8 mm",
+      "size": "Sheets and pre-cut soles",
+      "colors": "Black, Brown, Tan, White, Custom",
+      "applications": "Shoe insoles, outsole lining, footwear reinforcement, slipper soles, craft & repair",
+      "short": "Durable rubber soling sheet engineered for shoe manufacturing, flexibility, and shape retention.",
+      "description": "Banwar rubber sheets (commonly used in footwear insole and outsole construction) provide excellent structural support, moisture resistance, and flex endurance. Designed for easy cutting and bonding, they ensure long-lasting durability for shoes and sandals."
+    },
+    {
+      "id": "ladies-sole-sheet",
+      "name": "Ladies Sole Sheet",
+      "image": "images/products/ladies-sole-sheet.jfif",
+      "categories": ["footwear", "soling", "rubber"],
+      "material": "EVA / Rubber Blend / Neolite",
+      "thickness": "1.5 mm – 6 mm",
+      "size": "Sheets and pre-cut soles",
+      "colors": "Beige, Tan, Black, Nude, Brown, White, Custom",
+      "applications": "Ladies footwear soling, heels, flat sandals, formal shoes, repair & replacement",
+      "short": "Flexible, lightweight rubber soling sheets tailored for women's footwear and sandals.",
+      "description": "Ladies Sole Sheets offer a sleek, lightweight, and fine-finished rubber surface specifically designed for women's heels, flats, and casual sandals. Formulated for excellent grip, flexibility, and neat die-cutting during shoe assembly."
+    },
+    {
+      "id": "lehriya-design-rubber-sheet",
+      "name": "Lehriya Design Rubber Sheet",
+      "image": "images/products/lehriya-design.jfif",
+      "categories": ["rubber", "soling", "matting"],
+      "material": "Rubber / EVA Blend",
+      "thickness": "3 mm – 10 mm",
+      "size": "Sheets and custom cut sizes",
+      "colors": "Red, Blue, Black, Green, Custom",
+      "applications": "Shoe soling, chappal & slipper soles, anti-slip mats, footwear repair, surface grip lining",
+      "short": "Textured rubber soling sheet featuring a classic wavy 'Lehriya' pattern for improved traction and aesthetic design.",
+      "description": "Lehriya Design Rubber Sheets feature a distinctive wave-like embossed pattern that provides excellent non-slip grip and flex endurance. Highly popular in footwear manufacturing for slippers and casual shoes, as well as decorative anti-skid surface matting."
+    },
+    {
+      "id": "coin-rubber-sheet",
+      "name": "Coin Rubber Sheet",
+      "image": "images/products/coin-rubber.jfif",
+      "categories": ["matting", "flooring", "rubber"],
+      "material": "Natural Rubber / SBR Rubber Compound",
+      "thickness": "1.6 mm",
+      "size": "Rolls, sheets, and custom cut sizes",
+      "colors": "Black, Grey, Blue, Red, Custom",
+      "applications": "Industrial flooring, walkway runners, garage floors, elevator flooring, vehicle lining, anti-slip surface protection",
+      "short": "Heavy-duty rubber sheet with a coin-disc studs pattern for high-traction anti-slip flooring.",
+      "description": "Coin Rubber Sheets feature an embossed round stud/coin pattern engineered to deliver high anti-slip traction, wear resistance, and easy cleaning. Ideal for protecting floors in commercial, industrial, and heavy foot-traffic areas."
+    },
+    {
+      "id": "2-patti-chappal-rubber",
+      "name": "2 Patti Chappal Rubber Sheet",
+      "image": "images/products/chappal-sheet.jfif",
+      "categories": ["footwear", "soling", "rubber"],
+      "material": "EVA / Microcellular Rubber Blend",
+      "thickness": "6 mm – 18 mm",
+      "size": "Sheets and pre-cut flip-flop soles",
+      "colors": "Black, Blue, Red, Yellow, Green, Custom",
+      "applications": "Two-strap flip-flops (2 patti chappal), Hawaiian slippers, casual footwear manufacturing, sandal soling",
+      "short": "Lightweight and flexible rubber sheet designed for manufacturing classic two-strap slippers and casual flip-flops.",
+      "description": "2 Patti Chappal Rubber Sheets are engineered specifically for crafting durable, comfortable, and flexible flip-flop soles. Offering great shock absorption, water resistance, and die-cutting ease, these sheets are an essential component for everyday casual footwear production."
+    },
+    {
+      "id": "grey-light-korea-rubber",
+      "name": "Grey Light Korea Rubber Sheet",
+      "image": "images/products/grey-korea.jfif",
+      "categories": ["footwear", "soling", "rubber"],
+      "material": "Korean Light EVA / Microcellular Rubber",
+      "thickness": "2 mm – 12 mm",
+      "size": "Sheets and pre-cut sole cuts",
+      "colors": "Light Grey, Dark Grey, Custom",
+      "applications": "Lightweight footwear soling, slipper midsoles, orthopedic insoles, sports shoe padding, craft liners",
+      "short": "Premium lightweight Korean-grade grey rubber sheet offering high elasticity and low density.",
+      "description": "Grey Light Korea Rubber Sheets are crafted from premium low-density microcellular rubber compound. Highly valued for its lightweight nature, excellent elasticity, and shock-absorption properties, it provides superior comfort and structural support for footwear and custom padding."
+    },
+    {
+      "id": "desi-rubber-sheet",
+      "name": "Desi Rubber Sheet",
+      "image": "images/products/desi-rubber.jfif",
+      "categories": ["footwear", "soling", "rubber"],
+      "material": "Natural Rubber Blend / Recycled Vulcanized Rubber",
+      "thickness": "3 mm – 15 mm",
+      "size": "Standard sheets and custom cuts",
+      "colors": "Black, Dark Brown, Natural Red, Custom",
+      "applications": "Local footwear manufacturing, traditional chappal soles, heavy-duty shoe repair, industrial floor pads, agricultural matting",
+      "short": "Economical and high-durability indigenous rubber sheet designed for tough wear and local footwear soling.",
+      "description": "Desi Rubber Sheets are heavy-duty, budget-friendly rubber sheets manufactured for high abrasion resistance and durability. Widely used in traditional footwear craft, shoe repairs, and rugged utility padding where long service life and cost efficiency are required."
+    },
+    {
+      "id": "china-rubber-multi",
+      "name": "China Rubber Multi Sheet",
+      "image": "images/products/china-multi.jfif",
+      "categories": ["footwear", "soling", "rubber"],
+      "material": "Multi-Layer EVA / Rubber Compound",
+      "thickness": "3 mm – 15 mm",
+      "size": "Sheets and pre-cut sole cuts",
+      "colors": "Multi-Color (Layered Red, Blue, Yellow, Black, White)",
+      "applications": "Multi-layer slipper soles, casual footwear midsoles, colorful crafts, sports shoe padding, sandals",
+      "short": "Multi-layered colorful imported rubber sheet offering high durability, style, and cushioning.",
+      "description": "China Rubber Multi sheets feature vibrant multi-color sandwich layers crafted from high-density EVA and rubber compounds. Engineered for easy die-cutting, superior flexibility, and eye-catching aesthetics, they are widely used in casual flip-flop production and custom footwear designs."
+    },
+    {
+      "id": "taiwan-rubber-sheet",
+      "name": "Taiwan Rubber Sheet",
+      "image": "images/products/taiwan-rubber.jfif",
+      "categories": ["footwear", "soling", "rubber"],
+      "material": "High-Grade EVA / Synthetic Rubber Blend",
+      "thickness": "2 mm – 12 mm",
+      "size": "Sheets and pre-cut sole cuts",
+      "colors": "Black, Grey, White, Cream, Custom",
+      "applications": "High-quality shoe soling, premium slipper soles, sports shoe insoles, orthopedic footwear, durable grip lining",
+      "short": "High-density imported Taiwan rubber sheet known for exceptional durability, finish, and flexibility.",
+      "description": "Taiwan Rubber Sheets are premium-grade elastomeric sheets engineered for high abrasion resistance, superior flexibility, and smooth surface finishing. Popular in high-end footwear manufacturing, they offer reliable cushioning and long-lasting performance."
+    },
+    {
+      "id": "germany-hard-jump",
+      "name": "Germany Hard Jump Rubber Sheet",
+      "image": "images/products/japanies.jfif",
+      "categories": ["footwear", "soling", "industrial"],
+      "material": "High-Density Hard Rubber / Compact Vulcanized Synthetic Rubber",
+      "thickness": "10 mm",
+      "size": "Sheets and pre-cut soles",
+      "colors": "Black, Dark Brown, Natural Tan, Custom",
+      "applications": "Formal shoe heels, boot outsoles, heavy-duty footwear soling, industrial vibration pads, high-impact shoe repair",
+      "short": "Premium high-rigidity German-grade hard rubber sheet built for extreme wear resistance and heavy impact.",
+      "description": "Germany Hard Jump Rubber Sheets are engineered for high-load durability, exceptional stiffness, and superior abrasion resistance. Formulated with dense vulcanized rubber compounds, they are widely used in formal footwear heel lifts, rugged boot outsoles, and heavy-duty structural shoe repairs."
+    }
+
+
+
+
   ];
 
   window.RUBBERTECH = { SITE, PRODUCTS };
@@ -281,29 +417,29 @@
   }
 
   /* Product filter */
-  const catalog = document.querySelector("[data-catalog]");
-  if (catalog) {
-    const buttons = document.querySelectorAll("[data-filter]");
-    const empty = document.querySelector("[data-empty]");
-    buttons.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        buttons.forEach((b) => {
-          b.classList.remove("is-active");
-          b.setAttribute("aria-pressed", "false");
-        });
-        btn.classList.add("is-active");
-        btn.setAttribute("aria-pressed", "true");
-        const key = btn.dataset.filter;
-        let shown = 0;
-        catalog.querySelectorAll("[data-categories]").forEach((card) => {
-          const match = key === "all" || card.dataset.categories.split(" ").includes(key);
-          card.classList.toggle("is-hidden", !match);
-          if (match) shown += 1;
-        });
-        if (empty) empty.style.display = shown ? "none" : "block";
-      });
-    });
-  }
+  // const catalog = document.querySelector("[data-catalog]");
+  // if (catalog) {
+  //   const buttons = document.querySelectorAll("[data-filter]");
+  //   const empty = document.querySelector("[data-empty]");
+  //   buttons.forEach((btn) => {
+  //     btn.addEventListener("click", () => {
+  //       buttons.forEach((b) => {
+  //         b.classList.remove("is-active");
+  //         b.setAttribute("aria-pressed", "false");
+  //       });
+  //       btn.classList.add("is-active");
+  //       btn.setAttribute("aria-pressed", "true");
+  //       const key = btn.dataset.filter;
+  //       let shown = 0;
+  //       catalog.querySelectorAll("[data-categories]").forEach((card) => {
+  //         const match = key === "all" || card.dataset.categories.split(" ").includes(key);
+  //         card.classList.toggle("is-hidden", !match);
+  //         if (match) shown += 1;
+  //       });
+  //       if (empty) empty.style.display = shown ? "none" : "block";
+  //     });
+  //   });
+  // }
 
   /* Product modal */
   const modal = document.querySelector("#product-modal");
