@@ -52,7 +52,7 @@
     {
       "id": "silicone-rubber",
       "name": "Box Packing Rubber Sheet",
-      "image": "images/products/box-packing-rubber.jfif",
+      "image": "images/products/box-paking-rubber.jfif",
       "categories": ["packaging", "rubber", "foam"],
       "material": "EVA / Neoprene / High-Density Foam",
       "thickness": "1 mm – 28 mm",
