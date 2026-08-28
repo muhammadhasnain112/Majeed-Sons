@@ -308,12 +308,18 @@
       "applications": "Formal shoe heels, boot outsoles, heavy-duty footwear soling, industrial vibration pads, high-impact shoe repair",
       "short": "Premium high-rigidity German-grade hard rubber sheet built for extreme wear resistance and heavy impact.",
       "description": "Germany Hard Jump Rubber Sheets are engineered for high-load durability, exceptional stiffness, and superior abrasion resistance. Formulated with dense vulcanized rubber compounds, they are widely used in formal footwear heel lifts, rugged boot outsoles, and heavy-duty structural shoe repairs."
+    }];
+
+  const opt = document.getElementById("product");
+  PRODUCTS.forEach((product, index) => {
+    console.log(`Adding product option: ${product.name} (ID: ${product.id})`);
+    if (opt) {
+      opt.innerHTML += `<option value="${product.id}">${product.name}</option>`;
     }
 
+  })
 
 
-
-  ];
 
   window.RUBBERTECH = { SITE, PRODUCTS };
 
@@ -604,8 +610,8 @@
         valid = false;
       } else setError(quantity, "");
 
-      if (!message.value.trim() || message.value.trim().length < 10) {
-        setError(message, "Please describe your requirement (at least 10 characters).");
+      if (!message.value.trim() || message.value.trim().length < 5) {
+        setError(message, "Please describe your requirement (at least 5 characters).");
         valid = false;
       } else setError(message, "");
 
@@ -654,4 +660,8 @@
       }
     });
   }
+
+
+
+
 })();
