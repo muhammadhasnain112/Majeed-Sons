@@ -18,6 +18,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
 </head>
 
 <body>
@@ -182,10 +183,12 @@
         </div>
       </div>
 
-      <div class="container map-wrap">
-        <iframe src="https://www.google.com/maps?q=24.860624,67.015415&z=18&output=embed" width="100%" height="450"
-          style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+      <div class="container map-block">
+        <h2 class="map-heading">Our Location</h2>
+        <p class="map-copy">MA Jinnah Road, Eid Ghah Masjid, Phool Gali, Shop No 35, Saddar, Karachi</p>
+        <div id="shop-map" class="map-wrap" role="region" aria-label="Map of EVA Rubber Foam in Saddar, Karachi"></div>
+        <a class="map-open" href="https://www.google.com/maps/search/?api=1&amp;query=24.860624,67.015415"
+          target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
       </div>
     </section>
   </main>
@@ -244,7 +247,27 @@
     </div>
   </footer>
   <button class="to-top" type="button" aria-label="Back to top">↑</button>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script src="js/script.js"></script>
+  <script>
+    (function () {
+      var el = document.getElementById("shop-map");
+      if (!el || typeof L === "undefined") return;
+      var lat = 24.860624;
+      var lng = 67.015415;
+      var map = L.map(el, { scrollWheelZoom: false }).setView([lat, lng], 17);
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19,
+        attribution: "&copy; OpenStreetMap"
+      }).addTo(map);
+      L.marker([lat, lng]).addTo(map).bindPopup("EVA Rubber Foam<br>Shop No 35, Saddar Karachi");
+      var fix = function () { map.invalidateSize(); };
+      window.addEventListener("load", fix);
+      window.addEventListener("resize", fix);
+      setTimeout(fix, 200);
+      setTimeout(fix, 800);
+    })();
+  </script>
 </body>
 
 </html>
