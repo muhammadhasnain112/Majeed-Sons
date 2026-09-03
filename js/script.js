@@ -311,13 +311,11 @@
     }];
 
   const opt = document.getElementById("product");
-  PRODUCTS.forEach((product, index) => {
-    console.log(`Adding product option: ${product.name} (ID: ${product.id})`);
+  PRODUCTS.forEach((product) => {
     if (opt) {
       opt.innerHTML += `<option value="${product.id}">${product.name}</option>`;
     }
-
-  })
+  });
 
 
 
@@ -664,4 +662,138 @@
 
 
 
+})();
+
+/* ==========================================================================
+   Motion & polish enhancements
+   ========================================================================== */
+(() => {
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* Scroll progress bar */
+  const progress = document.createElement("div");
+  progress.className = "scroll-progress";
+  progress.innerHTML = "<span></span>";
+  document.body.appendChild(progress);
+  const bar = progress.firstElementChild;
+  const setProgress = () => {
+    const doc = document.documentElement;
+    const max = doc.scrollHeight - doc.clientHeight;
+    const p = max > 0 ? (window.scrollY || doc.scrollTop) / max : 0;
+    bar.style.width = (Math.max(0, Math.min(1, p)) * 100).toFixed(2) + "%";
+  };
+  window.addEventListener("scroll", setProgress, { passive: true });
+  window.addEventListener("resize", setProgress);
+  setProgress();
+
+  /* Floating WhatsApp quote button */
+  if (!document.querySelector(".wa-float")) {
+    const msg = encodeURIComponent("Hello EVA Rubber Foam, I'd like to request a quote.");
+    const wa = document.createElement("a");
+    wa.className = "wa-float";
+    wa.href = `https://wa.me/923212991915?text=${msg}`;
+    wa.target = "_blank";
+    wa.rel = "noopener";
+    wa.setAttribute("aria-label", "Chat with us on WhatsApp");
+    wa.innerHTML =
+      '<svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 .5C7.4.5.5 7.4.5 16c0 2.8.7 5.4 2 7.7L.5 31.5l8-2.1a15.4 15.4 0 007.5 1.9c8.6 0 15.5-6.9 15.5-15.5S24.6.5 16 .5zm0 28.2c-2.4 0-4.7-.6-6.7-1.8l-.5-.3-4.7 1.2 1.3-4.6-.3-.5a12.8 12.8 0 01-2-6.9C3.1 8.8 8.9 3 16 3s13 5.8 13 13-5.8 12.7-13 12.7zm7.2-9.6c-.4-.2-2.3-1.1-2.7-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-2.3-1.1-3.8-2-5.3-4.6-.4-.7.4-.6 1.1-2.1.1-.3.1-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.7c-.2 0-.6.1-1 .5-.4.4-1.4 1.3-1.4 3.3s1.4 3.8 1.6 4.1c.2.3 2.8 4.3 6.8 6 .9.4 1.7.6 2.2.8.9.3 1.8.3 2.4.2.7-.1 2.3-.9 2.6-1.9.3-.9.3-1.7.2-1.9-.1-.1-.3-.2-.7-.4z"/></svg>';
+    document.body.appendChild(wa);
+  }
+
+  /* Click ripple on buttons */
+  document.addEventListener("pointerdown", (event) => {
+    const btn = event.target.closest(".btn");
+    if (!btn) return;
+    const rect = btn.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const ripple = document.createElement("span");
+    ripple.className = "ripple";
+    ripple.style.width = ripple.style.height = size + "px";
+    ripple.style.left = event.clientX - rect.left - size / 2 + "px";
+    ripple.style.top = event.clientY - rect.top - size / 2 + "px";
+    btn.appendChild(ripple);
+    setTimeout(() => ripple.remove(), 620);
+  });
+
+  if (reduce) return; /* everything below is decorative motion */
+
+  /* Hero foam particles */
+  const field = document.querySelector(".hero-particles");
+  if (field) {
+    const count = window.innerWidth < 640 ? 10 : 18;
+    for (let i = 0; i < count; i++) {
+      const dot = document.createElement("i");
+      const size = 4 + Math.random() * 12;
+      dot.style.left = Math.random() * 100 + "%";
+      dot.style.width = dot.style.height = size + "px";
+      dot.style.animationDuration = 10 + Math.random() * 12 + "s";
+      dot.style.animationDelay = -Math.random() * 20 + "s";
+      field.appendChild(dot);
+    }
+  }
+
+  /* Hero pointer parallax */
+  const hero = document.querySelector(".hero");
+  const visual = document.querySelector(".hero-visual");
+  if (hero && visual && window.matchMedia("(hover: hover)").matches) {
+    let raf = 0;
+    let tx = 0;
+    let ty = 0;
+    hero.addEventListener("pointermove", (event) => {
+      const rect = hero.getBoundingClientRect();
+      tx = ((event.clientX - rect.left) / rect.width - 0.5) * 24;
+      ty = ((event.clientY - rect.top) / rect.height - 0.5) * 24;
+      if (!raf) {
+        raf = requestAnimationFrame(() => {
+          visual.style.transform = `translate(${tx}px, ${ty}px)`;
+          raf = 0;
+        });
+      }
+    });
+    hero.addEventListener("pointerleave", () => {
+      visual.style.transform = "";
+    });
+  }
+
+  /* Auto scroll-reveal for content across every page */
+  if (!("IntersectionObserver" in window)) return;
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+          io.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+  );
+
+  const groups = [
+    [".section-head", "reveal-up"],
+    [".feature-card", "reveal-up"],
+    [".industry-card", "reveal-scale"],
+    [".stat", "reveal-up"],
+    [".value-list li", "reveal-left"],
+    [".cert", "reveal-scale"],
+    [".faq-item", "reveal-up"],
+    [".quality-item", "reveal-left"],
+    [".split img", "reveal-right"],
+    [".split > div", "reveal-left"],
+    [".about-media", "reveal-left"],
+    [".about-copy", "reveal-right"],
+    [".cta-inner", "reveal-scale"],
+    [".map-block", "reveal-up"],
+    [".info-card", "reveal-left"],
+    [".form-card", "reveal-right"],
+  ];
+  groups.forEach(([selector, dir]) => {
+    document.querySelectorAll(selector).forEach((el, i) => {
+      if (el.classList.contains("reveal") || el.dataset.enh) return;
+      el.dataset.enh = "1";
+      el.classList.add("reveal", dir);
+      el.style.setProperty("--d", `${Math.min(i, 6) * 0.08}s`);
+      io.observe(el);
+    });
+  });
 })();
