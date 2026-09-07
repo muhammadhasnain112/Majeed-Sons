@@ -24,6 +24,19 @@
         "EVA white rubber is a versatile closed-cell material used wherever impact absorption, water resistance and clean fabrication are required. RubberTech supplies standard sheets and custom densities for industrial and commercial buyers.",
     },
     {
+      "id": "cow-mat",
+      "name": "Cow Rubber Mat",
+      "image": "images/products/cow-mat.png",
+      "categories": ["matting", "livestock", "rubber"],
+      "material": "Heavy-Duty Natural Rubber / Recycled SBR Compound",
+      "thickness": "28 mm",
+      "size": "4 ft x 6 ft, 6 ft x 8 ft, and custom stable sizes",
+      "colors": "Black",
+      "applications": "Cattle sheds, dairy farm flooring, stable bedding, horse stalls, livestock transport vans",
+      "short": "Heavy-duty anti-slip rubber mat designed to provide thermal insulation, joint relief, and floor hygiene for livestock.",
+      "description": "Cow rubber mats provide a comfortable, shock-absorbing surface that reduces joint stress and injuries in cattle and livestock. Featuring non-slip surface grooves and bottom drainage channels, these mats improve dairy farm hygiene, simplify cleaning, and enhance animal health and milk productivity."
+    },
+    {
       id: "epdm-foam",
       name: "Hard Sole Sheet",
       image: "images/products/hard sole sheet.jfif",
@@ -318,7 +331,7 @@
   });
   const marquee_group_1 = document.getElementById("marquee-group-1");
   const marquee_group_2 = document.getElementById("marquee-group-2");
-  if (marquee_group_1 && marquee_group_2) { 
+  if (marquee_group_1 && marquee_group_2) {
     marquee_group_1.innerHTML = PRODUCTS.map((p) => `<span class="marquee-item">${p.name}</span>`).join("");
     marquee_group_2.innerHTML = PRODUCTS.map((p) => `<span class="marquee-item">${p.name}</span>`).join("");
   }
