@@ -313,11 +313,15 @@
   const opt = document.getElementById("product");
   PRODUCTS.forEach((product) => {
     if (opt) {
-      opt.innerHTML += `<option value="${product.id}">${product.name}</option>`;
+      opt.innerHTML += `<option value="${product.name}">${product.name}</option>`;
     }
   });
-
-
+  const marquee_group_1 = document.getElementById("marquee-group-1");
+  const marquee_group_2 = document.getElementById("marquee-group-2");
+  if (marquee_group_1 && marquee_group_2) { 
+    marquee_group_1.innerHTML = PRODUCTS.map((p) => `<span class="marquee-item">${p.name}</span>`).join("");
+    marquee_group_2.innerHTML = PRODUCTS.map((p) => `<span class="marquee-item">${p.name}</span>`).join("");
+  }
 
   window.RUBBERTECH = { SITE, PRODUCTS };
 
@@ -464,30 +468,7 @@
     update();
   }
 
-  /* Product filter */
-  // const catalog = document.querySelector("[data-catalog]");
-  // if (catalog) {
-  //   const buttons = document.querySelectorAll("[data-filter]");
-  //   const empty = document.querySelector("[data-empty]");
-  //   buttons.forEach((btn) => {
-  //     btn.addEventListener("click", () => {
-  //       buttons.forEach((b) => {
-  //         b.classList.remove("is-active");
-  //         b.setAttribute("aria-pressed", "false");
-  //       });
-  //       btn.classList.add("is-active");
-  //       btn.setAttribute("aria-pressed", "true");
-  //       const key = btn.dataset.filter;
-  //       let shown = 0;
-  //       catalog.querySelectorAll("[data-categories]").forEach((card) => {
-  //         const match = key === "all" || card.dataset.categories.split(" ").includes(key);
-  //         card.classList.toggle("is-hidden", !match);
-  //         if (match) shown += 1;
-  //       });
-  //       if (empty) empty.style.display = shown ? "none" : "block";
-  //     });
-  //   });
-  // }
+
 
   /* Product modal */
   const modal = document.querySelector("#product-modal");
@@ -608,10 +589,10 @@
         valid = false;
       } else setError(quantity, "");
 
-      if (!message.value.trim() || message.value.trim().length < 5) {
-        setError(message, "Please describe your requirement (at least 5 characters).");
-        valid = false;
-      } else setError(message, "");
+      // if (!message.value.trim() || message.value.trim().length < 5) {
+      //   setError(message, "Please describe your requirement (at least 5 characters).");
+      //   valid = false;
+      // } else setError(message, "");
 
       if (!valid) return;
 
